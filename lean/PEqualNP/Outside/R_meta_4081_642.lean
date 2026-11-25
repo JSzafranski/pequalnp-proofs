@@ -155,8 +155,8 @@ theorem PEqualNP.Outside.R_meta_4081_642
         (fun g hg e he f hf dis => far ⟨g,hg,e,he,f,hf,dis⟩)
       refine ⟨g,hg,?_⟩
       rcases classification a b c ab ac bc hab hac hbc with h | h | h
-      · exact Or.inl (by simpa only [h] using eq)
-      · exact Or.inr (Or.inl (by simpa only [h] using eq))
-      · exact Or.inr (Or.inr (by simpa only [h] using eq))
+      · exact Or.inl (eq.trans h)
+      · exact Or.inr (Or.inl (eq.trans h))
+      · exact Or.inr (Or.inr (eq.trans h))
   change U.card ≤ 2 * (centreless G C).card + J.card + (orN G C \ lam G C).card
   omega
